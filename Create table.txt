@@ -1,0 +1,42 @@
+CREATE TABLE Customer(
+    id_customer NUMBER,
+    nama_customer varchar2(255),
+    kontak_customer number,
+    alamat varchar2(255),
+    CONSTRAINT Customer_pk PRIMARY KEY (id_customer)
+);
+
+CREATE TABLE Staff(
+    id_staff number,
+    kontak_staff number,
+    nama_staff varchar2(20),
+    CONSTRAINT Kendaraan_pk PRIMARY KEY (id_staff)
+);
+
+CREATE TABLE Orderan(
+    id_order varchar2(8),
+    price number,
+    alamat varchar2(255),
+    status varchar2(255),
+    id_customer number,
+    CONSTRAINT Orderan_pk PRIMARY KEY (id_order),
+    CONSTRAINT Orderan_fk Foreign key (id_customer) references Customer (id_customer)
+);
+
+CREATE TABLE Courier(
+    id_courier number,
+    kontak_courier number,
+    nama_courier varchar2(255),
+    CONSTRAINT Courier_pk PRIMARY KEY (id_courier)
+);
+
+CREATE TABLE Mengatur(
+    id_atur varchar2(7),
+    id_staff number,
+    id_order varchar2(8),
+    id_courier number,
+    CONSTRAINT Mengatur_pk PRIMARY KEY (id_atur),
+    constraint Mengatur_fk1 foreign key (id_staff) references Staff (id_staff),
+    constraint Mengatur_fk2 foreign key (id_order) references orderan (id_order),
+    constraint Mengatur_fk3 foreign key (id_courier) references courier (id_courier)
+);
