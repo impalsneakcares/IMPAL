@@ -27,6 +27,8 @@ insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582003',
 insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582004', '201118', '319204', '410003');
 insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582005', '201119', '319205', '410003');
 
+select * from tab;
+
 update Mengatur
 set id_courier = '410002'
 where id_atur = '582004';
