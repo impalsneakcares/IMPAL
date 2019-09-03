@@ -1,0 +1,35 @@
+insert into Customer (id_customer, nama_customer, kontak_customer, alamat) values ('111111', 'Andi', '082136758192', 'Sukapura');
+insert into Customer (id_customer, nama_customer, kontak_customer, alamat) values ('111112', 'Alda', '081724361820', 'Sukapura');
+insert into Customer (id_customer, nama_customer, kontak_customer, alamat) values ('111113', 'Bayu', '082111882010', 'Sukabirus');
+insert into Customer (id_customer, nama_customer, kontak_customer, alamat) values ('111114', 'Bima', '085682118901', 'Sukabirus');
+insert into Customer (id_customer, nama_customer, kontak_customer, alamat) values ('111115', 'Cipto', '085921281232', 'Sukabirus');
+
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201115', '081111777728', 'Sukasuka');
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201116', '081111777729', 'Sukasuka 2');
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201117', '081111777730', 'Sukasuka 3');
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201118', '081111777731', 'Sukasuka 4');
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201119', '081111777732', 'Sukasuka 5');
+insert into Staff (id_staff, kontak_staff, nama_staff) values ('201120', '081111777732', 'Sukasuka 6');
+
+insert into Orderan (id_order, price, alamat, status, id_customer) values ('319201', '20.000', 'Sukapura', 'Dicuci', '111111');
+insert into Orderan (id_order, price, alamat, status, id_customer) values ('319202', '20.000', 'Sukapura', 'Diantar', '111112');
+insert into Orderan (id_order, price, alamat, status, id_customer) values ('319203', '20.000', 'Sukabirus', 'Dicuci', '111113');
+insert into Orderan (id_order, price, alamat, status, id_customer) values ('319204', '20.000', 'Sukabirus', 'Dicuci', '111114');
+insert into Orderan (id_order, price, alamat, status, id_customer) values ('319205', '20.000', 'Sukabirus', 'Dijemput', '111115');
+
+insert into Courier (id_courier, kontak_courier, nama_courier) values ('410001', '089178291029', 'Ilham');
+insert into Courier (id_courier, kontak_courier, nama_courier) values ('410002', '082177722290', 'Rizky');
+insert into Courier (id_courier, kontak_courier, nama_courier) values ('410003', '082100928212', 'Bandu');
+
+insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582001', '201115', '319201', '410001');
+insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582002', '201116', '319202', '410001');
+insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582003', '201117', '319203', '410002');
+insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582004', '201118', '319204', '410003');
+insert into Mengatur (id_atur, id_staff, id_order, id_courier) values ('582005', '201119', '319205', '410003');
+
+update Mengatur
+set id_courier = '410002'
+where id_atur = '582004';
+
+delete from Staff
+where id_staff = '201120';
