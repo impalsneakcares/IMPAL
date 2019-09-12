@@ -1,0 +1,23 @@
+a = int (input("Bilangan a: "))
+b = int (input("Bilangan b: "))
+c = int (input("Bilangan c: "))
+
+if(a <= 0 or b <= 0 or c <= 0):
+	print("Segitiga tidak dapat dibangun")
+
+elif(a >= b+c or b >= a+c or c >= a+b):
+	print("Segitiga tidak dapat dibangun")
+
+elif((a == b and a != c) or (b == c and b != a) or (a == c and a != b)):
+	print("Segitiga sama kaki")
+
+elif(a == b and b == c):
+	print("Segitiga sama sisi")
+
+elif(a*a >= b*b+c*c or b*b >= a*a+c*c or c*c >= a*a+b*b):
+	print("Segitiga siku-siku")
+
+else:
+	print("Segitiga bebas")
+
+
